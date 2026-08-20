@@ -191,6 +191,40 @@
   }
   .vremeplov li:last-child .sta { border-left-color: transparent; padding-bottom: 0; }
 
+  /* Sitniji unos, za nešto što se desilo usred nekog dužeg perioda. */
+  .vremeplov li.uzgred .god { color: var(--tih); font-size: 17px; }
+  .vremeplov li.uzgred .sta {
+    font-size: 19px;
+    color: var(--tih);
+    padding-left: 42px;
+  }
+  .vremeplov li.uzgred .sta::before {
+    width: 9px;
+    height: 9px;
+    top: 9px;
+    left: -5px;
+    background: var(--tih);
+  }
+
+  /* --- spisak okruga: isti rep, različit početak --- */
+  .spisak {
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 21px;
+    line-height: 1.62;
+  }
+  .spisak .rep { color: var(--tih); }
+  .spisak .jos { color: var(--tih); font-size: 18px; padding-top: 6px; }
+
+  /* Naziv zemlje iznad primera, kad ih ima više na istom slajdu. */
+  .zemlja {
+    color: var(--tih);
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 14px;
+  }
+
   /* --- navigacija --- */
   #broj {
     position: absolute;
@@ -234,10 +268,7 @@
     <h2 style="margin-bottom:24px">Nikola Bebić</h2>
     <div class="red" style="gap:46px">
       <div style="flex:0 0 296px">
-        <!-- SNIMAK 9 -->
-        <div class="snimak" data-shot="foto" style="min-height:322px">
-          SNIMAK 9 — fotografija<br>(uspravan portret)
-        </div>
+        <img src="slike/nikola.png" alt="Nikola Bebić" style="width:100%; display:block; border-radius:10px">
         <p class="tiho" style="font-size:21px; margin:14px 0 0; text-align:center; max-width:none">Senior Software Engineer</p>
       </div>
       <ol class="vremeplov">
@@ -245,10 +276,10 @@
         <li><span class="god">2002–2010</span><span class="sta">Osnovna škola „Marija Bursać“</span></li>
         <li><span class="god">2010–2014</span><span class="sta">XIV beogradska gimnazija</span></li>
         <li><span class="god">2014–2018</span><span class="sta">ETF — Softversko inženjerstvo</span></li>
-        <li><span class="god">2016</span><span class="sta">Letnja praksa u Microsoftu, Bing tim</span></li>
-        <li><span class="god">2018</span><span class="sta">Bing Maps — <span class="tiho">bukvalno isti tim u kom sam bio na praksi, samo su u međuvremenu promenili čime se bave</span></span></li>
-        <li><span class="god">2024</span><span class="sta">Ova ista priča, na konferenciji u Poljskoj</span></li>
-        <li><span class="god">2026</span><span class="sta">Word</span></li>
+        <li class="uzgred"><span class="god">2016</span><span class="sta">usput: letnja praksa u Microsoftu, Bing tim</span></li>
+        <li><span class="god">2018–2026</span><span class="sta">Bing Maps — <span class="tiho">bukvalno isti tim u kom sam bio na praksi, samo su u međuvremenu promenili čime se bave</span></span></li>
+        <li class="uzgred"><span class="god">2024</span><span class="sta">usput: ova ista priča, na konferenciji u Poljskoj</span></li>
+        <li><span class="god">2026–</span><span class="sta">Word</span></li>
       </ol>
     </div>
   </section>
@@ -294,8 +325,8 @@ mesto = {
   <!-- 7 -->
   <section class="slajd centar">
     <p class="ogromno zuto">4.940</p>
-    <p class="veliko">administrativnih jedinica — samo u Srbiji, i samo granice.</p>
-    <p class="tiho">Dodaj ulice, zgrade, prodavnice, reke, staze. Pa pomnoži to celim svetom.</p>
+    <p class="veliko">administrativnih jedinica — samo u Srbiji.</p>
+    <p class="tiho">Ovde nisu ubrojana manja mesta, zgrade, reke, putevi, restorani… Pa puta ceo svet.</p>
   </section>
 
   <!-- 8 -->
@@ -303,15 +334,13 @@ mesto = {
     <h2>Ko je ovo ukucao?</h2>
     <div class="red">
       <div>
-        <p>Niko iz neke firme. Ovo je <span class="zuto">neko ručno nacrtao</span> — možda neko vaših godina.</p>
+        <p>Nije Majkrosoft. Nije Gugl. Ovo je <span class="zuto">neko ručno nacrtao</span>.</p>
         <p>OpenStreetMap je Vikipedija za mape. Otvoriš, napraviš nalog, popraviš.</p>
         <p class="tiho mono" style="font-size:21px">openstreetmap.org/relation/6930224</p>
       </div>
-      <!-- SNIMAK 1 -->
-      <div class="snimak" data-shot="osm-zvezdara">
-        SNIMAK 1 — stranica „Градска општина Звездара“<br>na openstreetmap.org, sa otvorenim spiskom tagova<br>
-        <span style="opacity:.6">(rezerva ako nema interneta — uživo je bolje)</span>
-      </div>
+      <!-- Rezerva za slučaj da nema interneta; uživo na osm.org je bolje. -->
+      <img src="slike/zvezdara.png" alt="Stranica „Градска општина Звездара“ na openstreetmap.org"
+           style="width:100%; display:block; border-radius:10px; border:1px solid var(--ivica)">
     </div>
   </section>
 
@@ -341,7 +370,7 @@ PREFIKSI = [<span class="st">"Градска општина"</span>, <span class
 
   <!-- 11 -->
   <section class="slajd">
-    <h2 class="crveno">Sad ga pokvarite.</h2>
+    <h2 class="crveno">Da li ovo treba uvek da radimo?</h2>
     <p class="tiho" style="margin-bottom:20px">Ova sela stvarno postoje. Pravilo odozgo ih je upravo unakazilo.</p>
     <table id="zamke"></table>
   </section>
@@ -356,49 +385,24 @@ PREFIKSI = [<span class="st">"Градска општина"</span>, <span class
         <p>Tražiš <span class="zuto mono">Moravica</span> — reku po kojoj je okrug dobio ime.</p>
         <p>U podacima: <span class="mono">Моравички управни округ</span></p>
         <p>Skineš „управни округ“, dobiješ <span class="crveno mono">Моравички</span>.</p>
-        <p class="veliko">Reč koju si ukucao <span class="crveno">ne postoji</span>. Moraš da je izmisliš.</p>
+        <p class="veliko">Reč koja je ukucana <span class="crveno">ne postoji</span>. Moraš da je izmisliš.</p>
       </div>
-      <!-- SNIMAK 2 -->
-      <div class="snimak" data-shot="osm-okruzi">
-        SNIMAK 2 — spisak srpskih okruga<br>na openstreetmap.org, da se vidi<br>obrazac „…ски управни округ“
+      <!-- Prava lista iz OSM-a, ne snimak ekrana. Srbija ima 24 okruga i svi izgledaju ovako. -->
+      <div class="spisak">
+        <div>Златиборски <span class="rep">управни округ</span></div>
+        <div><span class="zuto">Моравички</span> <span class="rep">управни округ</span></div>
+        <div>Шумадијски <span class="rep">управни округ</span></div>
+        <div>Нишавски <span class="rep">управни округ</span></div>
+        <div>Мачвански <span class="rep">управни округ</span></div>
+        <div>Колубарски <span class="rep">управни округ</span></div>
+        <div>Расински <span class="rep">управни округ</span></div>
+        <div>Сремски <span class="rep">управни округ</span></div>
+        <div class="jos">… i još 16, svi isti</div>
       </div>
     </div>
   </section>
 
   <!-- 13 -->
-  <section class="slajd">
-    <h2>Ime koje je zapravo opis</h2>
-    <div class="red">
-      <div>
-        <p>U Srbiji postoji <span class="zuto">šest sela</span> koja se zovu tačno:</p>
-        <p class="ogromno" style="font-size:64px">Извор</p>
-        <p class="tiho">Plus <span class="mono">Поток</span>, <span class="mono">Река</span>, <span class="mono">Брдо</span>, <span class="mono">Село</span>. To nisu imena — to su opisi.</p>
-        <p>Dakle: obrišimo generička imena?</p>
-      </div>
-      <!-- SNIMAK 3 -->
-      <div class="snimak" data-shot="osm-izvor">
-        SNIMAK 3 — rezultati pretrage „Извор“<br>na openstreetmap.org, da se vidi<br>više sela istog imena
-      </div>
-    </div>
-  </section>
-
-  <!-- 14 -->
-  <section class="slajd">
-    <h2>Ne. Obrt.</h2>
-    <div class="red">
-      <div>
-        <p class="ogromno" style="font-size:58px">Стари град</p>
-        <p>Postoji šest puta u Srbiji kao <span class="zuto">pravo ime mesta</span>. I jednom kao beogradska opština.</p>
-        <p class="veliko">Svako pravilo koje napišete srešće mesto koje ga ruši.</p>
-      </div>
-      <!-- SNIMAK 4 -->
-      <div class="snimak" data-shot="osm-stari-grad">
-        SNIMAK 4 — „Градска општина Стари град“<br>u Beogradu, na openstreetmap.org
-      </div>
-    </div>
-  </section>
-
-  <!-- 15 -->
   <section class="slajd">
     <h2>Grčka</h2>
     <div class="red">
@@ -408,60 +412,45 @@ PREFIKSI = [<span class="st">"Градска општина"</span>, <span class
         <p>Reč <span class="zuto">menja oblik</span>, ne gubi samo prefiks.</p>
         <p class="tiho">Zvezdara, Zvezdare, Zvezdari, Zvezdarom. Vi ovo radite bez razmišljanja. Sečenje stringa ne zna gramatiku.</p>
       </div>
-      <!-- SNIMAK 5 -->
-      <div class="snimak" data-shot="osm-tempi">
-        SNIMAK 5 — „Δήμος Τεμπών“<br>na openstreetmap.org
-      </div>
+      <img src="slike/tempi.png" alt="„Δήμος Τεμπών“ na openstreetmap.org"
+           style="width:100%; display:block; border-radius:10px; border:1px solid var(--ivica)">
     </div>
   </section>
 
-  <!-- 16 -->
+  <!-- 14 -->
   <section class="slajd">
-    <h2>Poljska</h2>
-    <div class="red">
+    <h2>Poljska i Slovenija</h2>
+    <div class="red" style="align-items:flex-start; gap:56px">
       <div>
+        <p class="zemlja">Poljska</p>
         <p>U podacima: <span class="mono">województwo łódzkie</span></p>
         <p>Ljudi govore: <span class="mono zuto">Woj. Łódzkie</span></p>
-        <p class="veliko">Tog niza slova <span class="crveno">nema nigde</span> u podacima.</p>
+        <p>Tog niza slova <span class="crveno">nema nigde</span> u podacima.</p>
         <p class="tiho">Ne možeš ga skinuti. Moraš da ga napraviš.</p>
       </div>
-      <!-- SNIMAK 6 -->
-      <div class="snimak" data-shot="osm-lodzkie">
-        SNIMAK 6 — „województwo łódzkie“<br>na openstreetmap.org
-      </div>
-    </div>
-  </section>
-
-  <!-- 17 -->
-  <section class="slajd">
-    <h2>Slovenija — verovatno ste bili tamo</h2>
-    <div class="red">
       <div>
-        <p class="ogromno" style="font-size:50px">Piran / Pirano</p>
+        <p class="zemlja">Slovenija</p>
+        <p class="mono zuto" style="font-size:34px; margin-bottom:14px">Piran / Pirano</p>
         <p>Dva jezika, u istom polju, odvojena kosom crtom.</p>
         <p class="tiho">Izola / Isola. Portorož / Portorose. A na mađarskoj strani Lendava / Lendva.</p>
         <p>Koje od ova dva ide na mapu?</p>
       </div>
-      <!-- SNIMAK 7 -->
-      <div class="snimak" data-shot="osm-piran">
-        SNIMAK 7 — „Piran / Pirano“<br>na openstreetmap.org
-      </div>
     </div>
   </section>
 
-  <!-- 18 -->
+  <!-- 15 -->
   <section class="slajd">
     <h2>Nije problem samo ime</h2>
     <ul class="lista">
       <li><span class="mono">Младеновац</span> je varošica — a <span class="mono">Младеновац (село)</span> je selo pored nje.</li>
       <li><span class="mono">Градска општина Палилула</span> postoji u Beogradu. I u Nišu. Slovo u slovo isto.</li>
-      <li><span class="mono">Фоча</span> u Srbiji ide ćirilicom, <span class="mono">Foča</span> u BiH ide latinicom. Ista baza.</li>
+      <li><span class="mono">Фоча</span> u Republici Srpskoj ide ćirilicom, <span class="mono">Foča</span> u Federaciji ide latinicom. Ista baza.</li>
     </ul>
     <p style="margin-top:26px" class="veliko">Oba odgovora su tačna. Koji prikazuješ <span class="zuto">prvi</span>?</p>
     <p class="tiho">Čestitam, upravo si dobio drugi posao: rangiranje.</p>
   </section>
 
-  <!-- 19 -->
+  <!-- 16 -->
   <!-- ODLUKA ZA NIKOLU: koliko detalja o produkcijskom pajplajnu izgovaraš naglas.
        Slajd je namerno neodređen. Ništa interno nije u repozitorijumu. -->
   <section class="slajd centar">
@@ -470,7 +459,7 @@ PREFIKSI = [<span class="st">"Градска општина"</span>, <span class
     <p class="tiho">Svako pravilo, za svaki jezik, za svaku zemlju, za svaki nivo. Jedno po jedno, kako je svako pucalo.</p>
   </section>
 
-  <!-- 20 -->
+  <!-- 17 -->
   <section class="slajd">
     <h2>Pouka</h2>
     <ul class="lista">
@@ -479,17 +468,6 @@ PREFIKSI = [<span class="st">"Градска општина"</span>, <span class
       <li class="zuto">Najteži bagovi ne liče na bagove. I niko ih ne prijavi.</li>
     </ul>
     <p style="margin-top:30px" class="veliko">Tvoj posao nije da budeš u pravu.<br>Tvoj posao je da nekome dan prođe.</p>
-  </section>
-
-  <!-- 21 -->
-  <section class="slajd centar">
-    <h2>Igraj se dalje</h2>
-    <!-- SNIMAK 8 -->
-    <div class="snimak" data-shot="qr" style="width:290px; height:290px; min-height:0; margin:0 auto 22px">
-      QR KOD<br>(treba finalni Pages link)
-    </div>
-    <p class="veliko">Pravila se menjaju. Pokušaj da ih pokvariš.</p>
-    <p class="tiho">I da — možeš večeras da popraviš pravu mapu sveta.</p>
   </section>
 
 </div>

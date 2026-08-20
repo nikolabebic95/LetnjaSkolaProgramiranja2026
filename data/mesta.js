@@ -199,7 +199,7 @@ const MESTA = [
     tip: "varošica",
     koord: [43.50586, 18.77439],
     osm: "https://www.openstreetmap.org/node/251856799",
-    zamka: "U Bosni i Hercegovini `name` je latinicom, a u Srbiji ćirilicom. Ista baza, suprotno pravilo.",
+    zamka: "U Republici Srpskoj `name` je ćirilicom, a u Federaciji latinicom. Ista baza, suprotno pravilo.",
   },
 ];
 
