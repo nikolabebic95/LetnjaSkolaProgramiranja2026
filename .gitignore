@@ -1,0 +1,10 @@
+# Sirovi materijali pre obrade (slike izvučene iz prezentacije, probne verzije)
+_scratch/
+
+# Python
+__pycache__/
+*.pyc
+
+# Windows / macOS
+Thumbs.db
+.DS_Store
